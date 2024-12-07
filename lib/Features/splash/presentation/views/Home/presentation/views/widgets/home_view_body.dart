@@ -22,7 +22,8 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         BestSellerListViewItem(),
+        
       ]),
     );
   }
-}
+} 
