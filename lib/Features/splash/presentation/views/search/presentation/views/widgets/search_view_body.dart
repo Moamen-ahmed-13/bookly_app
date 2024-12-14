@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/splash/presentation/views/search/presentation/views/widgets/best_seller_list_view_item_result.dart';
+import 'package:bookly_app/Features/splash/presentation/views/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:bookly_app/Features/splash/presentation/views/search/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class SearchViewBody extends StatelessWidget {
             style: Styles.textStyle18,
           ),
           SizedBox(height: 12),
-          Expanded(child: BestSellerListViewItemResult()),
+          Expanded(child: SearchResultListView()),
         ],
       ),
     );
