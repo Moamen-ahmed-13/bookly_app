@@ -3,6 +3,7 @@ import 'package:bookly_app/Features/home/presentation/manager/newest_books_cubit
 import 'package:bookly_app/Features/splash/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:bookly_app/core/widgets/custom_error.dart';
 import 'package:bookly_app/core/widgets/custom_loading_indicator.dart';
+import 'package:bookly_app/core/widgets/custom_loading_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,7 +33,9 @@ class BestSellerListView extends StatelessWidget {
         } else if (state is NewestBooksCubitFailure) {
           return CustomError(errMessage: state.errMessage);
         } else {
-          return const CustomLoadingIndicator();
+          return const ContentPlaceholder(
+            lineType: ContentLineType.threeLines,
+          );
         }
       },
     );

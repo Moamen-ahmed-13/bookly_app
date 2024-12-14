@@ -63,7 +63,7 @@ class BooksListViewItem extends StatelessWidget {
                     children: [
                       Text(
                         'Free',
-                        style: Styles.textStyle14
+                        style: Styles.textStyle16
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
