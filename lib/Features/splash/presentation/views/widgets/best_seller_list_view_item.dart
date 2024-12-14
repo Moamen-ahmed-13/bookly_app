@@ -22,7 +22,7 @@ class BooksListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustumBookImage(
-                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??" "),
             /*  AspectRatio(
               aspectRatio: 2.7 / 4,
               child: Container(
@@ -68,7 +68,7 @@ class BooksListViewItem extends StatelessWidget {
                       ),
                       const Spacer(),
                       BookRating(
-                        rating: bookModel.volumeInfo.averageRating ?? 0,
+                        rating: bookModel.volumeInfo.averageRating?.round() ?? 0,
                         count: bookModel.volumeInfo.ratingsCount ?? 2,
                       ),
                     ],
