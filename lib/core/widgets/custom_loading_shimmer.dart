@@ -34,6 +34,39 @@ class BannerPlaceholder extends StatelessWidget {
   }
 }
 
+class SimilarPlaceholder extends StatelessWidget {
+  const SimilarPlaceholder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * .3,
+      child: Shimmer.fromColors(
+        baseColor: Colors.grey.shade600,
+        highlightColor: Colors.grey.shade500,
+        enabled: true,
+        child: ListView.builder(
+          itemCount: 10,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: Container(
+                height: 20,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12.0),
+                  color: Colors.white,
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
 enum ContentLineType {
   twoLines,
   threeLines,

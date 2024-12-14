@@ -14,8 +14,8 @@ class SimilarBooksSection extends StatelessWidget {
           height: 40,
         ),
         Text(
-          'You can also like',
-          style: Styles.textStyle14.copyWith(
+          '      You can also like',
+          style: Styles.textStyle16.copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),

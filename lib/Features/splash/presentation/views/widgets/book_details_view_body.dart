@@ -11,15 +11,19 @@ class BookDetailsViewBody extends StatelessWidget {
     return const CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 23.0),
-            child: Column(
-              children: [
-                CustomBookDetailsAppBar(),
-                BookDetailsSecion(),
-                SimilarBooksSection()
-              ],
-            ),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 23.0),
+                child: Column(
+                  children: [
+                    CustomBookDetailsAppBar(),
+                    BookDetailsSecion(),
+                  ],
+                ),
+              ),
+              SimilarBooksSection(),
+            ],
           ),
         )
       ],
