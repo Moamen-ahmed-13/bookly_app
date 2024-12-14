@@ -1,5 +1,5 @@
 import 'package:bookly_app/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
-import 'package:bookly_app/Features/splash/presentation/views/Home/presentation/views/widgets/custum_list_view_item.dart';
+import 'package:bookly_app/Features/splash/presentation/views/Home/presentation/views/widgets/custum_book_item.dart';
 import 'package:bookly_app/core/widgets/custom_error.dart';
 import 'package:bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:flutter/material.dart';
@@ -17,22 +17,25 @@ class FeaturedBooksListView extends StatelessWidget {
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0),
-                  child: FeaturedListViewItem(),
+                return Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  child: CustumBookImage(
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                  ),
                 );
               },
             ),
           );
         } else if (state is FeaturedBooksFailure) {
           return CustomError(errMessage: state.errMessage);
-        }else{
+        } else {
           return const CustomLoadingIndicator();
         }
       },
     );
   }
 }
-
